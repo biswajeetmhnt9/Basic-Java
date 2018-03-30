@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Demo3 {	
+
+	public static void main(String[] args) 
+  {
+		Scanner scn=new Scanner(System.in);
+		System.out.println("Enter Range:");
+		int num=scn.nextInt();
+		System.out.println("Armstrong numbers are:");
+		for(int i=1;i<num;i++)
+		{
+			if(isArmstrong(i))
+			{
+				System.out.print(i+" ");
+			}
+		}
+	}
+	private static boolean isArmstrong(int i)
+	{
+			int num=i;
+			String s=Integer.toString(num);
+			int length=s.length();
+			int sum=0;
+			while(num>0)
+			{
+				sum+=Math.pow(num%10, length);
+				num/=10;
+			}
+			if(i==sum)
+			{
+				return true;
+			}
+			return false;
+		}
+		
+	}
